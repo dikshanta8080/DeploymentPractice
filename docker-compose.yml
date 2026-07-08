@@ -1,0 +1,31 @@
+services:
+  database:
+    image: postgres:16
+    container_name: postgres-db
+    environment:
+      POSTGRES_DB: DeploymentPractice
+      POSTGRES_USER: dikshanta
+      POSTGRES_PASSWORD: root
+    ports:
+      - "5435:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dikshanta -d DeploymentPractice"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  myapp:
+    build: .
+    container_name: springboot-app
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    env_file:
+      - .env
+
+volumes:
+  postgres_data:
