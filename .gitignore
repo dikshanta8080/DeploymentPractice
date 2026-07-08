@@ -1,57 +1,84 @@
+# ==========================
 # Gradle
+# ==========================
 .gradle/
 build/
 
+# Keep Gradle Wrapper
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ==========================
+# Java
+# ==========================
+*.class
+
+# ==========================
 # IntelliJ IDEA
+# ==========================
 .idea/
 *.iml
 out/
 
+# ==========================
 # VS Code
+# ==========================
 .vscode/
 
+# ==========================
 # Eclipse
+# ==========================
 .project
 .classpath
 .settings/
 
+# ==========================
 # NetBeans
+# ==========================
 nbproject/
 
-# Java
-*.class
-*.jar
-*.war
-*.ear
-
+# ==========================
 # Logs
+# ==========================
 logs/
 *.log
 
-# Environment files
+# ==========================
+# Environment Variables
+# ==========================
 .env
 .env.local
 .env.production
 .env.development
 
-# Keep the template
+# Keep template
 !.env.example
 
-# OS files
+# ==========================
+# OS Files
+# ==========================
 .DS_Store
 Thumbs.db
 
-# Temporary files
+# ==========================
+# Temporary Files
+# ==========================
 tmp/
 temp/
 
-# Coverage & Reports
+# ==========================
+# Test Reports
+# ==========================
 coverage/
 reports/
 
-# Docker volumes (if stored locally)
+# ==========================
+# Docker
+# ==========================
 postgres_data/
 
+# ==========================
 # Misc
+# ==========================
 *.swp
 *.swo
